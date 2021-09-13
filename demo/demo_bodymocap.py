@@ -113,6 +113,8 @@ def run_body_mocap(args, body_bbox_detector, body_mocap, visualizer):
         pred_output_list = body_mocap.regress(img_original_bgr, body_bbox_list)
         assert len(body_bbox_list) == len(pred_output_list)
 
+        print(pred_output_list)
+
         # extract mesh for rendering (vertices in image space and faces) from pred_output_list
         pred_mesh_list = demo_utils.extract_mesh_from_output(pred_output_list)
 
